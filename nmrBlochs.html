@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<html>
+<title>nmrBlochs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+    <div class="w3-twothird w3-container">
+    
+        <div class="w3-panel w3-pale-red">
+            <p>Samples Pending</p>
+        </div>
+      
+        <table class="w3-table w3-striped w3-border" id="submit-table">
+            <tr>
+                <td>Block Pos</td>
+                <td>Group</td>
+                <td>Member</td>
+                <td>Email</td>
+                <td>Sample</td>
+                <td>Solvent</td>
+                <td>Experiments</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="w3-panel">
+            <p> </p>
+        </div>
+
+    </div>    
+
+    <div class="w3-twothird w3-container">
+    
+        <div class="w3-panel w3-pale-red">
+            <p>New Sample</p>
+        </div>
+
+        <table class="w3-table w3-border" id="myTable">
+            <tr>
+                <td>Block Pos</td>
+                <td>Group</td>
+                <td>Member</td>
+                <td>Email</td>
+                <td>Sample</td>
+                <td>Solvent</td>
+                <td>Experiments</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input class="w3-input w3-border" type="number" placeholder="Block Pos" min="1" id="blckpos"></td>
+                <td><input class="w3-input w3-border" type="text"   placeholder="Group" id="group"></td>
+                <td><input class="w3-input w3-border" type="text"   placeholder="Member", id="member"></td>
+                <td><input class="w3-input w3-border" type="email"  placeholder="Email", id="email"></td>
+                <td><input class="w3-input w3-border" type="text"   placeholder="Sample" id="sample"></td>
+                <td>
+                    <select class="w3-select w3-border" name="Solvent" id="solvent" style="width:170px">
+                       
+                        <option value="chloroform">chloroform</option>
+                        <option value="DMSO">DMSO</option>
+                        <option value="acetone">acetone</option>
+                        <option value="MeOD">MeOD</option>
+                        <option value="D2O">D2O</option>
+                        <option value="H2O+D2O">H2O+D2O</option>
+                        <option value="Acetronitrile">Acetronitrile</option>
+                        <option value="dichloromethane">dichloromethane</option>
+                        <option value="benzene">benzene</option>
+                        <option value="DMF">DMF</option>
+                        <option value="dioxane">dioxane</option>
+                        <option value="ethanol">ethanol</option>
+                        <option value="HDMSO">HDMSO</option>
+                        <option value="no solvent">no solvent</option>
+                        <option value="toluene">toluene</option>
+                    </select>
+                </td>
+                <td>  
+                    <div class="w3-dropdown-hover">
+                        <button class="w3-button w3-black"  id="expts-a">NMR Experiments</button>
+                        <label id="expts"></label>
+                        <div class="w3-dropdown-content w3-bar-block w3-border" style="width:800px">
+                            <ul class="w3-ul">
+                                <div class="w3-container w3-pale-red w3-cell" >
+                                    <li>
+                                        <label class="w3-label" >
+                                            <input class="w3-check" type="checkbox" name="settings", value="proton">
+                                            proton
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="carbon">
+                                            carbon
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="cosy">
+                                            cosy
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="dept">
+                                            dept
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="19F sweep">
+                                            19F sweep
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="proton quant">
+                                            proton quant
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="water supp 1">
+                                            water supp 1
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="water supp 2">
+                                            water supp 2
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="water supp broadline">
+                                            water supp broadline
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="water supp MeOD">
+                                            water supp MeOD
+                                        </label>
+                                    </li>
+                                </div>
+                                <div class="w3-container w3-pale-green w3-cell">
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="31P">
+                                            31P
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="31P  Decouple">
+                                            31P  Decouple
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="31P wide">
+                                            31P wide
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="31P wide Decouple">
+                                            31P wide Decouple
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="31P unlocked">
+                                            31P unlocked
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="31P unlocked Decouple">
+                                            31P unlocked Decouple
+                                        </label>
+                                    </li>
+                                </div>
+
+                                <div class="w3-container w3-pale-blue w3-cell">
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="11B">
+                                            11B
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="11B Decouple">
+                                            11B Decouple
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="11B Unlocked">
+                                            11B Unlocked
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="11B Unlocked Decouple">
+                                            11B Unlocked Decouple
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="11B COSY">
+                                            11B COSY
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="11B HMQC">
+                                            11B HMQC
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="1H Boron Decouple">
+                                            1H Boron Decouple
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="7Li Standard">
+                                            7Li Standard
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="w3-check" type="checkbox" name="settings", value="High Field">
+                                            High Field
+                                        </label>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+                <td><input ckass="w3-button" type="button" value="Add" onclick="addRow('submit-table')"></td>
+            </tr>
+        </table>
+        
+        <div class="w3-panel  w3-padding-16">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <button class="w3-button w3-border w3-light-blue" style="width:100%" onclick="download('submit-table')">
+                <p>Click here to submit samples.</p>
+
+            </button>
+        </div>
+        <div class="w3-panel w3-light-blue w3-padding-16 w3-center">
+            <p>Please save the file in the directory: nmrdata :: downloads/Eric/remoteUsers</p>
+            <p>Change the browser download options to ask the user where a file should be saved</p>
+        </div>
+
+
+    </div>
+    
+
+
+    
+    
+    <script>
+        "use strict";
+        function addRow(tableID) {
+            // Get a reference to the table
+            let tableRef = document.getElementById(tableID);
+
+            // Insert a row at the end of the table
+            let newRow = tableRef.insertRow(-1);
+            console.log(document.getElementById("blckpos").value);
+            console.log(document.getElementById("group").value);
+            console.log(document.getElementById("member").value);
+            console.log(document.getElementById("email").value);
+            console.log(document.getElementById("solvent").value);
+            console.log(document.getElementById("expts-a").innerHTML);
+        
+            var newCell = newRow.insertCell(0);
+            newCell.innerHTML = document.getElementById("blckpos").value;
+            newCell = newRow.insertCell(1);
+            newCell.innerHTML = document.getElementById("group").value;
+            newCell = newRow.insertCell(2);
+            newCell.innerHTML = document.getElementById("member").value;
+            newCell = newRow.insertCell(3);
+            newCell.innerHTML = document.getElementById("email").value;
+            newCell = newRow.insertCell(4);
+            newCell.innerHTML = document.getElementById("sample").value;
+            newCell = newRow.insertCell(5);
+            newCell.innerHTML = document.getElementById("solvent").value;
+            newCell = newRow.insertCell(6);
+            newCell.innerHTML = document.getElementById("expts-a").innerHTML;
+            newCell = newRow.insertCell(7);
+            newCell.innerHTML = '<input type="button" value="Delete" onclick="deleteRow(this)">'; 
+
+            document.getElementById("blckpos").value =  Number(document.getElementById("blckpos").value) + 1;
+        }
+    </script>
+
+    <script>
+    "use strict";
+        function deleteRow(r) {
+            var i = r.parentNode.parentNode.rowIndex;
+            if (i>0) {
+                document.getElementById("submit-table").deleteRow(i);
+            }
+        }
+    </script>
+
+    <script>
+    "use strict";
+        // Select all checkboxes with the name 'settings' using querySelectorAll.
+        var checkboxes = document.querySelectorAll("input[type=checkbox][name=settings]");
+        var exptlabel = document.getElementById("expts");
+        var exptbutton = document.getElementById("expts-a");
+
+        let enabledSettings = []
+
+        console.log(checkboxes.length)
+        /*
+        For IE11 support, replace arrow functions with normal functions and
+        use a polyfill for Array.forEach:
+        https://vanillajstoolkit.com/polyfills/arrayforeach/
+        */
+
+        // Use Array.forEach to add an event listener to each checkbox.
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                enabledSettings =
+                    Array.from(checkboxes) // Convert checkboxes to an array to use filter and map.
+                    .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+                    .map(i => i.value)      // Use Array.map to extract only the checkbox values from the array of objects.
+
+                console.log(enabledSettings)
+                if (enabledSettings.length > 0){
+                    exptbutton.innerHTML = enabledSettings.join(", ")
+                }
+                else {
+                    exptbutton.innerHTML = "NMR Experiments"
+                }
+            })
+        });
+    </script>
+    
+    <script>
+    "use strict";
+        // The download function takes a CSV string, the filename and mimeType as parameters
+        // Scroll/look down at the bottom of this snippet to see how download is called
+        function submitSamples(tableID) {
+        
+            let tableRef = document.getElementById(tableID);
+          
+            var nrows = document.getElementById(tableID).rows.length;
+            var nrows = document.getElementById(tableID).rows[0].cells.length -1;
+          
+            if (nrows > 1) {
+          
+                var data = table_to_array(tableID)
+                var csvContent = '';
+
+                data.forEach(function(infoArray, index) {
+                    dataString = infoArray.join(';');
+                    csvContent += index < data.length ? dataString + '\n' : dataString;
+                });
+          
+                console.log(csvContent)
+            }
+        }
+        
+        function returnblock(bn) {
+
+            if( (bn % 10) === 0 ){
+                bn = (Math.floor(bn/10) * 10) - 9;
+            }
+            else {
+                bn = (Math.floor(bn/10) * 10) + 1;
+            }
+            var bnstr = "0".repeat(4-bn.toString().length) + bn.toString();
+            return bnstr;
+        }
+    
+        function returnblocknum(bn) {
+            return  "0".repeat(4-bn.toString().length) + bn.toString();
+        }
+
+        var download = function(tableID) {
+            var a = document.createElement('a');
+            
+            var mimeType = 'text/csv;encoding:utf-8';
+
+            let tableRef = document.getElementById(tableID);
+
+            var nrows = document.getElementById(tableID).rows.length;
+            var nrows = document.getElementById(tableID).rows[0].cells.length -1;
+
+            var data = table_to_array(tableID);
+            
+            console.log("data[0][0]");
+            console.log(data[0][4]);
+            
+            var timestamp = getFormattedDate();
+            var blcknum = returnblock(data[0][0]);
+            var grp = data[0][1];
+            
+            console.log(blcknum);
+            
+            var fileName = blcknum + '_';
+            for ( var i=0; i<data.length; i++){
+                fileName = fileName + returnblocknum(data[i][0]);
+            }
+            fileName = fileName + '_' + grp + '.csv';
+            
+            
+            // Building the CSV from the Data two-dimensional array
+            // Each column is separated by ";" and new line "\n" for next row
+            var csvContent = '"sample #","Experiment","Solvent","Member","Sample Name","Group","Name","Email"' + '\n';
+            var dataString = '';
+            
+            console.log(data.length);
+            for (var i=0;  i<data.length; i++) {
+                var rw = [];
+                rw.push(data[i][0].toString());  // sample #
+                rw.push(data[i][6])              // experiment
+                rw.push(data[i][5])               // Solvent
+                rw.push(data[i][2])               // Member
+                rw.push(data[i][4])               // Sample
+                rw.push(data[i][1])               // Group
+                rw.push(timestamp)               // Name
+                rw.push(data[i][3])              // Name
+                
+                dataString =  '"' + rw.join('","') + '"';
+                console.log("dataString " + dataString );
+                csvContent += i < data.length ? dataString + '\n' : dataString;
+                
+                console.log("dataString " + dataString);
+                console.log("i " + i.toString());
+            };    
+
+            mimeType = mimeType || 'application/octet-stream';
+
+            if (navigator.msSaveBlob) { // IE10
+                navigator.msSaveBlob(new Blob([csvContent], { type: mimeType }), fileName);
+            }
+            else if (URL && 'download' in a) { //html5 A[download]
+                a.href = URL.createObjectURL(new Blob([csvContent], {type: mimeType }));
+
+                a.setAttribute('download', fileName);
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+            else {
+                location.href = 'data:application/octet-stream,' + encodeURIComponent(content); // only this mime type is supported
+            }
+        }
+
+        function getFormattedDate() {
+            var date = new Date();
+            var day = date.getDate();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+
+            day = (day < 10 ? "0" : "") + day;
+            hour = (hour < 10 ? "0" : "") + hour;
+            min = (min < 10 ? "0" : "") + min;
+
+            var str = day + hour + min;
+            return str;
+        }
+
+        function table_to_array(table_id) {
+                var myData = document.getElementById(table_id).rows
+                //console.log(myData)
+                var my_liste = [];
+                
+                for (var i = 1; i < myData.length; i++) {
+                    var el = myData[i].children;
+                    var my_el = [];
+                    for (var j = 0; j < el.length-1; j++) {
+                        my_el.push(el[j].innerText);
+                    }
+                    my_liste.push(my_el);
+                }
+                return my_liste;
+        }
+    </script>
+
+
+
+</body>
+</html>
