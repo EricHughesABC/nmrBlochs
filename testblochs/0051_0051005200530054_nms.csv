@@ -1,0 +1,5 @@
+"sample #","Experiment","Solvent","Member","Sample Name","Group","Name","Email"
+"51","proton","chloroform","eeh","s1","nms","141718","vsmw51"
+"52","proton, carbon","DMSO","eeh","s2","nms","141718","vsmw51"
+"53","proton, carbon, cosy","acetone","eeh","s3","nms","141718","vsmw51"
+"54","proton, carbon, cosy, dept","acetone","eeh","s4","nms","141718","vsmw51"
